@@ -106,7 +106,8 @@ __END__
 
     my $timer = $stats->timer("request_duration");
     # ... do something expensive ...
-    $timer->finish;
+    my $elapsed_ms = $timer->finish;
+
 
 =head1 ATTRIBUTES
 
@@ -160,7 +161,8 @@ Record an event of duration C<$time> milliseconds for the named timing metric.
 
 Returns a L<Net::Statsd::Client::Timer> object for the named timing metric.
 The timer begins when you call this method, and ends when you call C<finish>
-on the timer.
+on the timer.  Calling C<finish> on the timer returns the elapsed time in
+milliseconds.
 
 =head2 $stats->gauge($metric, $value, [$sample_rate])
 

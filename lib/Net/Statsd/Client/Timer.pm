@@ -33,13 +33,14 @@ sub BUILD {
 
 sub finish {
   my ($self) = @_;
-  my $duration = tv_interval($self->{start});
+  my $duration = tv_interval($self->{start}) * 1000;
   $self->{statsd}->timing_ms(
     $self->{metric},
-    $duration * 1000,
+    $duration,
     $self->{sample_rate},
   );
   delete $self->{_pending};
+  return $duration;
 }
 
 sub cancel {
@@ -90,7 +91,7 @@ begins counting as soon as it's constructed.
 
 =head2 $timer->finish
 
-Stop timing, and send the elapsed time to the server.
+Stop timing, and send the elapsed time to the server.  Returns the elapsed time in milliseconds.
 
 =head2 $timer->cancel
 

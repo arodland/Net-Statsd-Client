@@ -1,4 +1,6 @@
 {{$NEXT}}
+  * Handle sample rate correctly for all operations (previously it
+    was ignored for timers, gauges, and sets).
 
 0.33      2018-03-29 05:45:58 America/New_York
   * Reduce test failures. No functional change.

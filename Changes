@@ -1,4 +1,6 @@
 {{$NEXT}}
+
+0.34      2018-08-17 11:26:47 America/New_York
   * Handle sample rate correctly for all operations (previously it
     was ignored for timers, gauges, and sets).
 

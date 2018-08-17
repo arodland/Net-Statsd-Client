@@ -18,7 +18,7 @@ has '_pending' => (
   default => quote_sub q{1},
 );
 
-has ['metric', 'start', '_file', '_line', 'warning_callback'] => (
+has ['metric', 'start', '_file', '_line', 'warning_callback', 'sample_rate'] => (
   is => 'rw',
 );
 

@@ -126,7 +126,7 @@ B<Optional:> The port number to connect to. Defaults to 8125.
 
 =head2 prefix
 
-B<Optional:> A prefix to be added to all metric names logged throught his
+B<Optional:> A prefix to be added to all metric names logged throughout this
 object.
 
 =head2 sample_rate
